@@ -99,11 +99,11 @@ public class PatcherDialog extends JDialog {
                 for (Path path : result) {
                     String finalPath = path.toString();
                     String subPath = finalPath.substring(finalPath.indexOf(projectName));
-                    String realPath = exportPath + projectName + subPath;
+                    String realPath = exportPath + projectName+ "\\" + subPath;
                     // 创建多级目录
-                    Files.createDirectories(Path.of(realPath).getParent());
+                    Files.createDirectories(Paths.get(realPath).getParent());
                     // 替换文件
-                    Files.copy(path, Path.of(realPath), StandardCopyOption.REPLACE_EXISTING);
+                    Files.copy(path, Paths.get(realPath), StandardCopyOption.REPLACE_EXISTING);
                 }
             }
         } catch (Exception e) {

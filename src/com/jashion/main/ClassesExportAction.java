@@ -27,7 +27,7 @@ public class ClassesExportAction extends AnAction {
             com.intellij.openapi.actionSystem.DataContext dataContext = e.getDataContext();
             PsiJavaFile javaFile = (PsiJavaFile) ((PsiFile) DataKeys.PSI_FILE.getData(dataContext)).getContainingFile();
             String sourceName = javaFile.getName();
-            Module module = (Module) DataKeys.MODULE.getData(dataContext);
+            Module module = DataKeys.MODULE.getData(dataContext);
             String compileRoot = CompilerModuleExtension.getInstance(module).getCompilerOutputPath().getPath();
             getVirtualFile(sourceName, CompilerModuleExtension.getInstance(module).getCompilerOutputPath().getChildren(), compileRoot);
             VirtualFileManager.getInstance().syncRefresh();
