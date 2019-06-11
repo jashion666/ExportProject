@@ -30,7 +30,6 @@ public class PatcherDialog extends JDialog {
     private JTextField textField;
     private JButton fileChooseBtn;
     private JPanel filePanel;
-    private JTextField webTextField;
     private AnActionEvent event;
     private JBList fieldList;
 
